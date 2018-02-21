@@ -1,0 +1,12 @@
+{
+  "name": "ejemplo_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Hola GDG\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Moreira <m@codetry.io> (https://github.com/codetry-io)",
+  "license": "ISC"
+}

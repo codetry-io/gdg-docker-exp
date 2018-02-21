@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+    ejemplo_db:
+        image: mongo:latest
+        container_name: "ejemplo_db"
+        restart: always
+
+    ejemplo_api:
+        image: node:8
+        user: "node"
+        container_name: "ejemplo_api"
+        working_dir: /home/node/app
+        volumes:
+            - ./ejemplo_api/:/home/node/app
+
+        environment:
+            -   mongodb = mongodb://ejemplo_db:27017/ejemplo_api
+        command: bash -c "npm install && npm start --production"
+        depends_on:
+            - ejemplo_db
+        ports:
+            - "3030:3030"
+
+    ejemplo_app:
+        image: httpd:2.4
+        container_name: "ejemplo_app"
+        restart: always
+        working_dir: /usr/local/apache2/htdocs/
+        volumes:
+            - ./ejemplo_app/dist/:/usr/local/apache2/htdocs
+        depends_on:
+            - ejemplo_api
+        ports:
+            - "80:80"

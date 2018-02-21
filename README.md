@@ -1,6 +1,5 @@
 <p align="center">
-<img src="http://codetry.io/logo-mail.png">
-<img width="120" src="http://gdgneuquen.org/wp-content/themes/gdgnqn/images/logo.png">
+<img src="http://codetry.io/img/codetry-gdg.png">
 </p>
 
 
